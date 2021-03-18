@@ -1,15 +1,13 @@
 <?php
 
 /**
- * Plugin Name:     check shortcodes
- *  * Plugin URI:      www.3ele.de
- * Description:     check shortcodes
+ * Plugin Name:     Shortcode Scanner
+ * Plugin URI:      https://lightweb-media.de
+ * Description:     Scannt alle vorhanden Shortcodes deiner Wordpress Installation und zeigt diese als Liste unter Einstellungen an.
  * Author:          Sebastian Weiss
- * Author URI:      www.3ele.de
- * Text Domain:     check-shortcodes
- * Domain Path:     
+ * Author URI:      https://lightweb-media.de
+ * Text Domain:     Shortcodes-scanner
  * Version:         1.1.0
- *
  */
 
 
@@ -68,7 +66,7 @@ class View_All_Available_Shortcodes
             foreach($shortcode_tags as $code => $function)
             {
                 ?>
-                  <li>[<?php echo $code; ?>]</li>
+           <li><h3>[<?php echo $code; ?>]</h3></li>
                     <?php $args = array(
     's' => $code
     );
@@ -82,7 +80,7 @@ if ( $the_query->have_posts() ) {
     <li><a href="<?php  the_permalink() ?>"><?php the_title(); ?></a></li>
     <?php
     }
-        echo '</ul>';
+        echo '<br></ul>';
 } else {
         echo "Sorry no posts found"; 
 } ?>
